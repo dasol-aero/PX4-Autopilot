@@ -254,6 +254,12 @@ int GZBridge::task_spawn(int argc, char *argv[])
 
 	if (!model_pose) {
 		model_pose = "";
+		int i = std::stoi(std::string(px4_instance));
+		if (i == 0) { model_pose =  "0,0,0.5,0,0,0"; }
+		if (i == 1) { model_pose =  "5,0,0.5,0,0,0"; }
+		if (i == 2) { model_pose = "10,0,0.5,0,0,0"; }
+		if (i == 3) { model_pose = "15,0,0.5,0,0,0"; }
+		if (i == 4) { model_pose = "20,0,0.5,0,0,0"; }
 	}
 
 	if (!model_sim) {
